@@ -22,7 +22,7 @@ build:
 #    - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p ${password}
     - docker push dockerregistry.hclets.com/ms_catalog:latest
 
-  integrations:
+  integration:
     hub:
       - integrationName: hcl-registry
         type: "private docker registry"
