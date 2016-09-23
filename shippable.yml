@@ -7,17 +7,15 @@ jdk:
 
 build:
 
-ci:
-  - java -version
-  - mvn --version
-  - mvn clean install -DskipTests
-  - mvn sonar:sonar
-  - docker build -t hrishi/ms_catalog:latest .
-  - docker images | grep hrishi
+  ci:
+    - mvn clean install -DskipTests
+     mvn sonar:sonar
+     docker build -t hrishi/ms_catalog:latest .
+     docker images | grep hrishi
 
-post_ci:
-#   - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p ${password}
-    - docker push hrishi/ms_catalog:latest
+  post_ci:
+  #   - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p ${password}
+      - docker push hrishi/ms_catalog:latest
 
 integrations:
   hub:
