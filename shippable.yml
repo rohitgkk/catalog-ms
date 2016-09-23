@@ -18,7 +18,7 @@ build:
     - docker build -t dockerregistry.hclets.com/ms_catalog:latest .
 
   post_ci:
-    - docker push ms_catalog:latest
+    - docker push dockerregistry.hclets.com/ms_catalog:latest
 
   integrations:
     hub:
