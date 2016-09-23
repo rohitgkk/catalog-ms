@@ -15,10 +15,14 @@ build:
     - mvn --version
     - mvn clean install -DskipTests
     - mvn sonar:sonar
-    - docker build -t ms_catalog .
+    - docker build -t dockerregistry.hclets.com/ms_catalog:latest .
 
   post_ci:
-    - ls -a
-    - pwd
+    - docker push ms_catalog:latest
+
+  integrations:
+    hub:
+      - integrationName: my_private_registry
+        type: "private docker registry"
 
   cache: true
