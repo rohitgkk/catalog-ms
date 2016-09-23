@@ -15,10 +15,10 @@ build:
     - mvn --version
     - mvn clean install -DskipTests
     - mvn sonar:sonar
-    - docker build -t dockerregistry.hclets.com/ms_catalog:latest .
+    - docker build -t hrishi/ms_catalog:latest .
 
   post_ci:
-    - docker push dockerregistry.hclets.com/ms_catalog:latest
+    - docker push hrishi/ms_catalog:latest
 
   integrations:
     hub:
