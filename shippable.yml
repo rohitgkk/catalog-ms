@@ -23,6 +23,6 @@ build:
   integrations:
     hub:
       - integrationName: my_private_registry
-        type: "private docker registry"
+        type: docker
 
   cache: true
