@@ -16,6 +16,8 @@ build:
     - mvn clean install -DskipTests
     - mvn sonar:sonar
     - docker build -t hrishi/ms_catalog:latest .
+    - docker images | grep ms_catalog
+#    - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p JGpME+/yPInzSoM7M1KPLMgPo8yGraMWVrK+6eb+Cc7aI1mkDXujXyr/WIsu6gBacCAJTp3Pk1DDfHXA//Kr2bt5GqMglHzBbaeEQztKBClUkMhU1H6EoMY3yy7zAGWSMaEaGX6puycaVycdMx0fkLnWQFY/xgM1XtVwyM2GVN/LRkSVrZClVqhK4OK5CrJjS5BrMdwt7R4gbtmWOst/c+BfCWjB6KuXzS8CybmxKitKj44JNgNGqSIWYvogpen/hWCD/u7yFOd6BNV+LytbcCjELzKOzX49yacWOwXhAr68K/VdOIq8WlBWh+cCRVaUcOFdwG6vPRecxRnarCqKXQ==
     - docker push hrishi/ms_catalog:latest
 
   integrations:
@@ -23,4 +25,6 @@ build:
       - integrationName: myregistry
         type: docker
 
+  env 
+  - secure: JGpME+/yPInzSoM7M1KPLMgPo8yGraMWVrK+6eb+Cc7aI1mkDXujXyr/WIsu6gBacCAJTp3Pk1DDfHXA//Kr2bt5GqMglHzBbaeEQztKBClUkMhU1H6EoMY3yy7zAGWSMaEaGX6puycaVycdMx0fkLnWQFY/xgM1XtVwyM2GVN/LRkSVrZClVqhK4OK5CrJjS5BrMdwt7R4gbtmWOst/c+BfCWjB6KuXzS8CybmxKitKj44JNgNGqSIWYvogpen/hWCD/u7yFOd6BNV+LytbcCjELzKOzX49yacWOwXhAr68K/VdOIq8WlBWh+cCRVaUcOFdwG6vPRecxRnarCqKXQ==
   cache: true
