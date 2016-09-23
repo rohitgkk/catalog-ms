@@ -19,7 +19,7 @@ build:
     - docker images | grep ms_catalog
 
   post_ci:
-#    - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p ${password}
+    - docker login dockerregistry.hclets.com -u hrishikesh.deodhar -p ${password}
     - docker push dockerregistry.hclets.com/ms_catalog:latest
 
   integration:
